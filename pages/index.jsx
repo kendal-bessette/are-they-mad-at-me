@@ -56,7 +56,6 @@ export default function Home () {
       const response = await axios.post('/api/sentiment', { text });
       const sentiment = response.data.sentiment;
       let randomResponse;
-
       switch (sentiment) {
         case 'Positive':
           randomResponse = positiveResponses[Math.floor(Math.random() * positiveResponses.length)];
