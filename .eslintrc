@@ -1,158 +1,135 @@
 {
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "env": {
-      "browser": true,
-      "node": true,
-      "es6": true
-    },
-    "plugins": [
-      "react",
-      "prettier",
-      "import",
-      "@typescript-eslint",
-      "jsx-a11y",
-      "react-hooks"
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "react",
+    "import",
+    "@typescript-eslint",
+    "jsx-a11y",
+    "react-hooks"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2015,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "no-useless-constructor": "error",
+    "no-dupe-class-members": "error",
+    "import/export": "error",
+    "import/no-commonjs": 2,
+    "no-undef": "error",
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": true
+      }
     ],
-    "parserOptions": {
-      "ecmaVersion": 2015,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
+    "no-unused-vars": 0,
+    "no-const-assign": "error",
+    "no-var": "error",
+    "eqeqeq": [
+      "error",
+      "always",
+      {
+        "null": "ignore"
       }
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
+    ],
+    "no-duplicate-case": "error",
+    "no-alert": "error",
+    "react/jsx-no-comment-textnodes": 2,
+    "react/jsx-no-duplicate-props": 2,
+    "react/jsx-no-target-blank": 2,
+    "react/jsx-no-undef": 2,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 1,
+    "react/no-danger-with-children": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/no-find-dom-node": 2,
+    "react/no-is-mounted": 2,
+    "react/no-render-return-value": 2,
+    "react/jsx-fragments": ["error", "element"],
+    "react/no-unknown-property": 2,
+    "react/prop-types": [
+      2,
+      {
+        "skipUndeclared": true
       }
-    },
-    "rules": {
-      "no-useless-constructor": "error",
-      "no-dupe-class-members": "error",
-      "import/export": "error",
-      "import/no-commonjs": 2,
-      "no-undef": "error",
-      "prefer-const": [
-        "error",
-        {
-          "destructuring": "any",
-          "ignoreReadBeforeAssign": true
+    ],
+    "react/no-unused-prop-types": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/require-render-return": 2,
+    "react/forbid-foreign-prop-types": 2,
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1,
+    "@typescript-eslint/array-type": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/no-use-before-define": 0,
+    "semi": "off",
+    "@typescript-eslint/semi": 2,
+    "@typescript-eslint/no-useless-constructor": 2,
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "local",
+        "args": "none",
+        "varsIgnorePattern": "[uU]nused"
+      }
+    ],
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/class-name-casing": 0,
+    "@typescript-eslint/no-empty-interface": 0,
+    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "@typescript-eslint/ban-ts-ignore": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to", "hrefLeft", "hrefRight"],
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
         }
-      ],
-      "no-unused-vars": 0,
-      "no-const-assign": "error",
-      "no-var": "error",
-      "eqeqeq": [
-        "error",
-        "always",
-        {
-          "null": "ignore"
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
         }
-      ],
-      "no-duplicate-case": "error",
-      "no-alert": "error",
-      "react/jsx-no-comment-textnodes": 2,
-      "react/jsx-no-duplicate-props": 2,
-      "react/jsx-no-target-blank": 2,
-      "react/jsx-no-undef": 2,
-      "react/jsx-uses-react": 2,
-      "react/jsx-uses-vars": 1,
-      "react/no-danger-with-children": 2,
-      "react/no-direct-mutation-state": 2,
-      "react/no-find-dom-node": 2,
-      "react/no-is-mounted": 2,
-      "react/no-render-return-value": 2,
-      "react/jsx-fragments": [
-        "error",
-        "element"
-      ],
-      "react/no-unknown-property": 2,
-      "react/prop-types": [
-        2,
-        {
-          "skipUndeclared": true
-        }
-      ],
-      "react/no-unused-prop-types": 2,
-      "react/react-in-jsx-scope": 2,
-      "react/require-render-return": 2,
-      "react/forbid-foreign-prop-types": 2,
-      "react-hooks/rules-of-hooks": 2,
-      "react-hooks/exhaustive-deps": 1,
-      "@typescript-eslint/array-type": 0,
-      "@typescript-eslint/explicit-function-return-type": 0,
-      "@typescript-eslint/explicit-member-accessibility": 0,
-      "@typescript-eslint/no-use-before-define": 0,
-      "semi": "off",
-      "@typescript-eslint/semi": 2,
-      "@typescript-eslint/no-useless-constructor": 2,
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          "vars": "local",
-          "args": "none",
-          "varsIgnorePattern": "[uU]nused"
-        }
-      ],
-      "@typescript-eslint/camelcase": 0,
-      "@typescript-eslint/class-name-casing": 0,
-      "@typescript-eslint/no-empty-interface": 0,
-      "@typescript-eslint/interface-name-prefix": 0,
-      "@typescript-eslint/no-var-requires": 0,
-      "@typescript-eslint/no-explicit-any": 0,
-      "@typescript-eslint/ban-ts-ignore": 0,
-      "@typescript-eslint/no-empty-function": 0,
-      "jsx-a11y/anchor-is-valid": [
-        "error",
-        {
-          "components": [
-            "Link"
-          ],
-          "specialLink": [
-            "to",
-            "hrefLeft",
-            "hrefRight"
-          ],
-          "aspects": [
-            "noHref",
-            "invalidHref",
-            "preferButton"
-          ]
-        }
-      ],
-      "jsx-a11y/label-has-associated-control": [
-        "error",
-        {
-          "required": {
-            "some": [
-              "nesting",
-              "id"
-            ]
-          }
-        }
-      ],
-      "jsx-a11y/label-has-for": [
-        "error",
-        {
-          "required": {
-            "some": [
-              "nesting",
-              "id"
-            ]
-          }
-        }
-      ],
-      "jsx-a11y/no-autofocus": [
-        0,
-        {
-          "ignoreNonDOM": true
-        }
-      ]
-    },
-    "extends": [
-      "prettier",
-      "plugin:prettier/recommended",
-      "plugin:@typescript-eslint/recommended"
+      }
+    ],
+    "jsx-a11y/no-autofocus": [
+      0,
+      {
+        "ignoreNonDOM": true
+      }
     ]
-  }
-  
+  },
+  "extends": [
+
+  ]
+}

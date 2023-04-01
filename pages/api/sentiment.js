@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
-  const { text } = req.body;
+  const {text} = req.body;
 
   try {
     const response = await axios.post(
@@ -23,9 +23,9 @@ export default async function handler(req, res) {
     );
 
     const sentiment = response.data.choices[0].text.trim();
-    res.status(200).json({ sentiment });
+    res.status(200).json({sentiment});
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Failed to analyze sentiment' });
+    res.status(500).json({error: 'Failed to analyze sentiment'});
   }
 }

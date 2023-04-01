@@ -1,54 +1,53 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import {Title, Container, Form, Description, TextArea, SubmitButton, ConfirmationMessage, Page} from './home';
+import { Title, Container, Form, Description, TextArea, SubmitButton, ConfirmationMessage, Page } from './api/home';
 
-
-export default function Home() {
+export default function Home () {
   const [text, setText] = useState('');
   const [confirmationMessage, setConfirmationMessage] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const positiveResponses = [
     "They're obsessed with you!",
-    "No way",
-    "Positivity is radiating from this text.",
-    "These vibes are good",
-    "This message is like a warm hug.",
+    'No way',
+    'Positivity is radiating from this text.',
+    'These vibes are good',
+    'This message is like a warm hug.',
     "It's all smiles and sunshine!",
-    "Nothing but love in this message!",
-    "A wave of happiness just rolled in.",
+    'Nothing but love in this message!',
+    'A wave of happiness just rolled in.'
   ];
-  
+
   const negativeResponses = [
-    "Negativity is lurking in these words.",
-    "A touch of sourness in the air.",
-    "This message is like a cold shower.",
+    'Negativity is lurking in these words.',
+    'A touch of sourness in the air.',
+    'This message is like a cold shower.',
     "It's hard to ignore the negative vibe.",
-    "This message might carry a grudge.",
-    "The message has a somewhat prickly feel.",
-    "Unfortunately, the sender of this message might hate you.",
-    "The words carry a gloomy undertone.",
-    "A whiff of bitterness in this text.",
-    "Oh, they just LOVE you... not.",
+    'This message might carry a grudge.',
+    'The message has a somewhat prickly feel.',
+    'Unfortunately, the sender of this message might hate you.',
+    'The words carry a gloomy undertone.',
+    'A whiff of bitterness in this text.',
+    'Oh, they just LOVE you... not.',
     "It's like they're your biggest fan – or not.",
-    "Wow, they must adore you... in an alternate universe.",
-    "This message is as positive as a rainy day.",
-    "They're practically singing your praises – if you read between the lines.",
+    'Wow, they must adore you... in an alternate universe.',
+    'This message is as positive as a rainy day.',
+    "They're practically singing your praises – if you read between the lines."
   ];
-  
+
   const neutralResponses = [
-    "Hard to say",
-    "Probably not, but also probably not not.",
-    "No way to know ❤️",
+    'Hard to say',
+    'Probably not, but also probably not not.',
+    'No way to know ❤️',
     "50 shades of 'meh' – hard to tell.",
     "A bit ambiguous, don't you think?",
     "The jury's still out on this one.",
-    "Switzerland in text form – neutral.",
-    "It's like a balancing act – right in the middle.",
+    'Switzerland in text form – neutral.',
+    "It's like a balancing act – right in the middle."
 
-];
-  
+  ];
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -72,7 +71,7 @@ export default function Home() {
           randomResponse = 'Unable to determine sentiment.';
       }
 
-      setConfirmationMessage(sentiment);
+      setConfirmationMessage(randomResponse);
     } catch (error) {
       console.error(error);
     }
@@ -81,6 +80,7 @@ export default function Home() {
   };
 
   return (
+    <React.Fragment>
     <Page>
     <Container>
       <Title>Are They Mad at Me?</Title>
@@ -104,7 +104,6 @@ export default function Home() {
       {confirmationMessage && <ConfirmationMessage>{confirmationMessage}</ConfirmationMessage>}
       </Container>
             </Page>
-);
+            </React.Fragment>
+  );
 };
-
- 
