@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Title, Container, Form, Description, TextArea, SubmitButton, ConfirmationMessage, Page } from './api/home';
+import { PageContainer, LeftSide, Title, Description, RightSide, Form, TextArea, SubmitButton, ConfirmationMessage } from '../styles/home';
 
 export default function Home () {
   const [text, setText] = useState('');
@@ -81,15 +81,15 @@ export default function Home () {
 
   return (
     <React.Fragment>
-    <Page>
-    <Container>
+    <PageContainer>
+    <LeftSide>
       <Title>Are They Mad at Me?</Title>
         <Description>
-        Ever received a message, email, or DM and wondered if the person was mad at you?
-        Well, wonder no more! Our delightful little tool is here to analyze the sentiment
-        of your text and give you a hint of what's going on. Go ahead, copy and paste that
-        cryptic message, and let's crack the code together! 🕵️‍♀️🔍
+        Got a message that leaves you wondering, "Are they mad at me?" <br/>Enter the text, and we'll reveal the sender's true feelings for you.
         </Description>
+        </LeftSide>
+        <RightSide>
+
           <Form onSubmit={handleSubmit}>
             <TextArea
             placeholder="Enter text message"
@@ -98,12 +98,12 @@ export default function Home () {
             required
             />
             <SubmitButton type="submit" disabled={loading}>
-            Give it to me
+              {loading ? "Analyzing..." : "Give it to me"}
             </SubmitButton>
           </Form>
       {confirmationMessage && <ConfirmationMessage>{confirmationMessage}</ConfirmationMessage>}
-      </Container>
-            </Page>
+            </RightSide>
+            </PageContainer>
             </React.Fragment>
   );
 };
